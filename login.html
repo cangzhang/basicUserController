@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link href="res/css/bootstrap.css" rel="stylesheet">
+        <script src="res/js/bootstrap.js"></script>
+        <!--[if is IE 9]><script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script><script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <style>
+            .modal-header, h4, .close {
+                background-color: #5cb85c;
+                color:white !important;
+                text-align: center;
+                font-size: 30px;
+            }
+            .modal-footer {
+                background-color: #f9f9f9;
+            }
+        </style>
+        <title>Login</title>
+
+        <script language=JavaScript>
+            function InputCheck(LoginForm) {
+                if (LoginForm.username.value == "") {
+                    alert("请输入用户名!");
+                    LoginForm.username.focus();
+                    return false;
+                }
+                if (LoginForm.password.value == "") {
+                    alert("请输入密码!");
+                    LoginForm.password.focus();
+                    return false;
+                }
+        }
+        </script>
+    </head>
+
+    <body>
+        <div class="container">
+            <fieldset>
+                <legend>用户登录</legend>
+                <form name="LoginForm" method="post" action="login.php" onSubmit="return InputCheck(this)">
+                    <div class="form-group">
+                        <label for="username">用户名:</label>
+                        <input id="username" name="username" type="text" class="input form-control" />
+                    </div>
+                    <div>
+                        <label for="password">密 码:</label>
+                        <input id="password" name="password" type="password" class="input form-control" />
+                    </div>
+                    <div>
+                        <br>
+                        <input type="submit" name="submit" value="  登 录  " class="btn btn-success" />
+                        <a href="reg.html" class="btn btn-default" role="button"> 注 册 </a>
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+    </body>
+</html>
